@@ -1,0 +1,10 @@
+version: "3" # Version of docker-compose
+
+services:
+  docker-local-registry:
+    image: "registry:latest"
+    container_name: docker-local-registry-container
+    hostname: docker-local-registry
+    restart: "no"
+    ports:
+      - "4321:4321"
