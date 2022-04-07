@@ -2,9 +2,13 @@ version: "3" # Version of docker-compose
 
 services:
   docker-local-registry:
-    image: "registry:latest"
+    build: .
     container_name: docker-local-registry-container
     hostname: docker-local-registry
     restart: "no"
+    environment:
+      - REGISTRY_AUTH=htpasswd
+      - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd
+      - REGISTRY_AUTH_HTPASSWD_REALM=Docker Local Registry Realm
     ports:
       - "4321:4321"
