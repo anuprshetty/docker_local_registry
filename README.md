@@ -1,5 +1,7 @@
 # Docker Local Registry
 
+Local docker registry server using docker container.
+
 ## Info
 
 - Registry credentials:
